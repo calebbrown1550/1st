@@ -1,0 +1,316 @@
+/* set variables */
+:root{
+    --accent:#ffa149; 
+    --accentHover:#fafafa;
+    --dark60: #5c6c8c99;
+    --light: #fff;
+    --transition: all 0.3s ease 0s;
+}
+
+
+/* All section */
+*{
+    /* clear margin & padding */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ /* fix height using scroll */
+html ,body{
+    height: 100%;    
+    overflow: auto;
+}
+
+/* Add backgrond & gradient */
+body {
+    background:linear-gradient(var(--dark60), var(--dark60)), url(images/phuket\ picture\ 2.png);
+    
+    /* background-image: url(images/phuket\ picture\ 2.png); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;   /* Make backgrond 100% */
+}
+
+a, button, .logo{
+    cursor: pointer;
+}
+
+/* Make grid */
+main{
+    height: 100;
+    display: grid;
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px)) minmax(60px, 1fr);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+header{
+    grid-column: 2 / span 6; /*header at colum2 other go column6 */   
+}
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+.link{
+    margin-left: auto;
+    font-size: 1.7rem;
+}
+.link a, .link button {
+    margin: 0 25px;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(18, 18, 19);
+    transition: var(--transition)
+}
+.link a:hover{
+    color: var(--accentHover);
+}
+
+.button-login{
+    margin: 0 30px;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10%;
+    background-color: white;
+
+}
+.button-login:hover{
+    background-color: #f48b28;
+}
+
+/* content */
+
+.info{
+    grid-column: 3 / span 4;
+    margin-top: 28%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.info h1{
+    font-size: 4rem;
+    display: inline;
+}
+.phuket-h1{
+    color: black;
+    transition: var(--transition);
+}
+.phuket-h1:hover{
+    color: #f48b28;
+}
+
+.info h4{
+    color: white;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+/* social */
+
+.social{
+    position: absolute;
+    margin-top: 20%;
+
+}
+.icons{
+    margin: 0 0 0 50px ;
+    display: grid; 
+}
+.icons img{
+    margin: 50%;
+    width: 40px;
+}
+
+
+/* Interesting Places */
+.interesting{
+    position:absolute;
+    bottom: 50px;
+    right: 10px;
+    background-color: rgb(244, 231, 220);
+    margin: 24% 0 0 0;
+    padding: 15px 25px 15px 25px;
+    border-radius: 20px;
+    
+}
+.interesting-text{
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+.places{
+    
+    margin: 25px 10px 25px 10px;
+}
+.places img{
+    width: 200px;
+    border-radius: 5px;
+}
+
+.places p{
+    width: 200px;
+}
+.places a{
+    color: black;
+    width: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    align-items: center;
+    text-align: right;
+    justify-content: center;
+    transition: .3s;
+}
+.places a:hover{
+    color:#f48b28;
+}
+
+/* //////////////// Responsive  Tablet //////////////// */
+@media only screen and (max-width:992px) {
+    
+    .navbar{
+        margin-top: 20px;
+    }
+    .logo{
+        height: 25px;
+        width: auto;
+    }
+    .button-login, .link a, .link button {
+        display: inline-block;
+        font-size: 30px;
+        margin: 0 5px;
+        align-items: center;
+    }
+    .button-login{
+        font-size: 30px;
+        font-weight: bold;
+        padding: 2px;
+    }
+
+    .info{
+        margin-top: 200px;
+        margin-left: 150px;
+        grid-column: 2 / span 5;
+    }
+    .info h1{
+        font-size: 80px;
+    }
+    .info h4{
+        font-size: 30px;
+        margin-top: 5px;
+    }
+
+
+    .social{
+        margin-top: 350px;
+    }
+    .icons img{
+        margin: 30px 0;
+        width: 50px;
+    }
+
+
+    .interesting{
+        display:flex;    
+        margin: 0 0 0 50px;   
+    }
+    .interesting-text{
+        display: none;
+    }
+    .places{
+        padding: 15px 0 0 20px;
+        width: 180px;
+        font-size: 10px;
+    }
+    
+    .places img, .places p{
+        width: 170px;
+        font-size: 15px;
+    }
+    .places h4{
+        font-size: 20px;
+    }
+    .places a{
+        display: flex;
+        text-align: center;
+        font-size: 30px;
+        margin: 50px;
+        margin-left: 60px;
+    } 
+   
+}
+
+
+/* /////////// Responsive moblie ///////*/
+@media only screen and (max-width:600px) {
+    
+    header{
+        grid-column: 1 / span 7; /*header at colum2 other go column6 */   
+    }
+    .logo{
+        margin-left: 20px;
+    }
+    .button-login, .link a, .link button {
+        display: inline-block;
+        font-size: 13px;
+        margin: 0 2px;
+        align-items: center;
+    }
+
+
+    .info{
+        margin-top: 150px;
+        margin-left: 60px;
+
+    }
+    .info h1{
+        font-size: 30px;
+    }
+    .info h4{
+        font-size: 15px;
+    }
+
+    .social{
+        margin-top: 280px;
+    }
+    .icons img{
+        width: 20px;
+        margin: 30px 0 0 0 ;
+    }
+
+
+    .interesting{
+        bottom: 60px;
+        left: 10px;
+        padding: 0;
+    }
+    .interesting-text{
+        display: none;
+    }
+    
+    .places{
+        padding: 0px 0 0 0px;
+        width: 105px;
+        
+    }
+    .places img, .places p, .places h4 {
+        width: 100px;
+        margin: 0 0 0 20px;
+    }
+    .places h4{
+        font-size: 12px;
+    }
+    .places p{
+        font-size: 7px;
+    }
+    .places a{
+        display: flex;
+        text-align: center;
+        font-size: 20px;
+        margin: 20px 0px 20px 10px;
+    }
+}
+
